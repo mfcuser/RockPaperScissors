@@ -25,8 +25,7 @@ let userInput = prompt("Choose rock, paper or scissors");
         console.log("You choose SCISSORS");
     } else  {
         console.log("Wrong answer");
-    }
-    return userInput;
+    };
 
  // ALGORYTM   
 
