@@ -31,7 +31,9 @@ let gameRound = 0;
 
  playerChoice;
  computerChoice;
-
+ roundCalculation();
+ getScore();
+ 
 
 // teraz dopisz reakcje komputera
 // wybranie kto wygrywa
@@ -86,4 +88,43 @@ function randomGenerator() {
      }
     };
 
+function roundCalculation(playerChoice, computerChoice) {
+    if (playerChoice === "rock" && computerChoice === "rock") {
+        console.log("DRAW");
+        return;
+    } else if (playerChoice === "rock" && computerChoice === "paper") {
+        console.log("Computer wins :(");
+        computerScore += 1;
+        return;
+    } else if (playerChoice === "rock" && computerChoice === "scissors") {
+        console.log("You win!");
+        playerScore += 1;
+        return;
+    } else if (playerChoice === "paper" && computerChoice === "paper") {
+        console.log("DRAW");
+        return;
+    } else if (playerChoice === "paper" && computerChoice === "scissors") {
+        console.log("Computer wins :(");
+        computerScore += 1;
+        return;
+    } else if (playerChoice === "paper" && computerChoice === "rock") {
+        console.log("You win!");
+        playerScore += 1;
+        return;
+    } else if (playerChoice === "scissors" && computerChoice === "scissors") {
+        console.log("DRAW");
+        return;
+    } else if (playerChoice === "scissors" && computerChoice === "rock") {
+        console.log("Computer wins :(");
+        computerScore += 1;
+        return;
+    } else {
+        console.log("You win!");
+        playerScore += 1;
+        return;
+    }
+}
 
+function getScore() {
+    console.log(`PLAYER: ${playerScore}, COMPUTER: ${computerScore}`);
+}
