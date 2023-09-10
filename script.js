@@ -1,11 +1,7 @@
 // ZMIENNE
 
-let rock; // czy dopisac wartosc?
-let paper; // czy dopisac wartosc?
-let scissors; // czy dopisac wartosc?
-
 let playerChoice = getPlayerChoice();
-let computer = ''; // czy dopisac wartosc?
+let computerChoice = getComputerChoice();
 
 let playerScore = 0;
 let computerScore = 0;
@@ -34,7 +30,7 @@ let gameRound = 0;
  // ALGORYTM   
 
  playerChoice;
-
+ computerChoice;
 
 
 // teraz dopisz reakcje komputera
@@ -45,14 +41,6 @@ let gameRound = 0;
 // FUNKCJE
 
 // function itemChoice()
-
-function getComputerChoice (params) {
-    // wybiera losowo jedno z trzech - kamien, papier lub nozyce
-}
-
-function randomGenerator() {
-    return Math.floor(Math.random() * 3) + 1; 
-};
 
 function getPlayerChoice () {
     let userInput = prompt("Choose rock, paper or scissors");
@@ -70,6 +58,32 @@ function getPlayerChoice () {
     }
 
     return lowLetters;
-}
+};
+
+function getComputerChoice() {
+    let compRoundChoice = randomGenerator();
+
+    if (compRoundChoice === "rock") {
+        console.log("Computer choose ROCK");
+    } else if (compRoundChoice === "paper") {
+        console.log("Computer choose PAPER");
+    } else {
+        console.log("Computer choose SCISSORS");
+    }
+
+    return  compRoundChoice;
+};
+
+function randomGenerator() {
+     let generatedNumber = Math.floor(Math.random() * 3) + 1;
+    
+     if (generatedNumber === 1) {
+        return "rock";
+     } else if (generatedNumber === 2) {
+        return "paper";
+     } else { 
+        return "scissors";
+     }
+    };
 
 
